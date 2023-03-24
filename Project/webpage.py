@@ -20,7 +20,7 @@ SVMK_model = pickle.load(open('model_svmk.pkl','rb'))
 def LR_prdeiction(input_data):
     
     lr_prediction = LR_model.predict([input_data])
-    print(lr_prediction)
+    
 
     if (lr_prediction[0] == 0):
       return 'Line of Sight Signal'
@@ -30,7 +30,7 @@ def LR_prdeiction(input_data):
 def KNN_prdeiction(input_data):
     
     knn_prediction = KNN_model.predict([input_data])
-    print(knn_prediction)
+    
 
     if (knn_prediction[0] == 0):
       return "Line of Sight SIgnal"
@@ -40,7 +40,7 @@ def KNN_prdeiction(input_data):
 def SVML_prdeiction(input_data):
     
     svml_prediction = SVML_model.predict([input_data])
-    print(svml_prediction)
+    
 
     if (svml_prediction[0] == 0):
       return "Line of Sight SIgnal"
@@ -50,7 +50,7 @@ def SVML_prdeiction(input_data):
 def SVMK_prdeiction(input_data):
     
     svmk_prediction = SVMK_model.predict([input_data])
-    print(svmk_prediction)
+    
 
     if (svmk_prediction[0] == 0):
       return "Line of Sight SIgnal"
@@ -78,10 +78,10 @@ def main():
     # creating a button for Prediction
     
     if st.button('Predict Error'):
-        LR_pred_value = ML_models([carrier_noise_ratio, pseudorange, elevation_angle])
-        KNN_pred_value = ML_models([carrier_noise_ratio, pseudorange, elevation_angle])
-        SVML_pred_value = ML_models([carrier_noise_ratio, pseudorange, elevation_angle])
-        SVMK_pred_value = ML_models([carrier_noise_ratio, pseudorange, elevation_angle])
+        LR_pred_value = LR_prdeiction([carrier_noise_ratio, pseudorange, elevation_angle])
+        KNN_pred_value = KNN_prdeiction([carrier_noise_ratio, pseudorange, elevation_angle])
+        SVML_pred_value = SVML_prdeiction([carrier_noise_ratio, pseudorange, elevation_angle])
+        SVMK_pred_value = SVMK_prdeiction([carrier_noise_ratio, pseudorange, elevation_angle])
 
 
         heading = "<h2>Logistic Regression</h2>"
