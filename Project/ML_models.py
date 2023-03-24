@@ -11,14 +11,6 @@ import pickle
 import matplotlib.pyplot as plt
 
 
-# def generate_scatter_plot(y_test, predicted_values):
-#     fig, ax = plt.subplots()
-#     ax.scatter(np.array(y_test), np.array(predicted_values))
-#     ax.set_xlabel("Actual Values")
-#     ax.set_ylabel("Predicted Values")
-#     ax.set_title("Scatter Plot of Predicted Values")
-#     return fig
-
 
 data = pd.read_csv('Channel2.csv')
 encoder = LabelEncoder()
